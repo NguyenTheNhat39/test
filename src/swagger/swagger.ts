@@ -1,6 +1,9 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 import { env } from '../config/env';
-import { productSchemas, authSchemas } from './schemas';
+import { authSchemas } from './schemas/auth.schema';
+import { bookSchemas } from './schemas/book.schema';
+import { borrowSchemas } from './schemas/borrow.schema';
+import { categorySchemas } from './schemas/category.schema';
 
 export const swaggerSpec = swaggerJSDoc({
     definition: {
@@ -11,19 +14,33 @@ export const swaggerSpec = swaggerJSDoc({
             description: 'API tài liệu cho hệ thống',
         },
         servers: [
-            { url: `http://localhost:${env.PORT}`, description: 'Local Development' },
-            { url: `https://test-1ohw.onrender.com`, description: 'test' },
+            { url: `http://localhost:${env.PORT}`, description: 'Local Development', },
+            { url: `https://product-qapl.onrender.com`, description: 'test', },
         ],
         tags: [
             {
-                name: 'Products',
-                description: 'Quản lý sản phẩm'
+                name: 'Auth',
+                description: 'Xác thực và quản lý người dùng'
+            },
+            {
+                name: 'Books',
+                description: 'Quản lý sách'
+            },
+            {
+                name: 'Borrow',
+                description: 'Mượn và trả sách'
+            },
+            {
+                name: 'Categories',
+                description: 'Quản lý thể loại sách'
             }
         ],
         components: {
             schemas: {
-                ...productSchemas,
                 ...authSchemas,
+                ...bookSchemas,
+                ...borrowSchemas,
+                ...categorySchemas,
             },
             //   Nếu bạn có JWT:
             securitySchemes: {
