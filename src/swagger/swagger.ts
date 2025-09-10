@@ -16,10 +16,6 @@ export const swaggerSpec = swaggerJSDoc({
         ],
         tags: [
             {
-                name: 'Auth',
-                description: 'Xác thực và quản lý người dùng'
-            },
-            {
                 name: 'Products',
                 description: 'Quản lý sản phẩm'
             }
