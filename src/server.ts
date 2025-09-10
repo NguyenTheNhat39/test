@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import cors from 'cors';
+// import cors from 'cors';
 import { env } from './config/env';
 import UserRouter from './routers/user.router';
 import BookRouter from './routers/book.router';
@@ -12,7 +12,7 @@ import swaggerUi from 'swagger-ui-express';
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // Routes
