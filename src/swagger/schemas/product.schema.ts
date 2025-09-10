@@ -48,4 +48,11 @@ export const productSchemas = {
             message: { type: 'string', example: 'Xóa sản phẩm thành công' },
         },
     },
+    ErrorResponse: {
+        type: 'object',
+        properties: {
+            success: { type: 'boolean', example: false },
+            message: { type: 'string', example: 'Lỗi server' },
+        },
+    },
 };
